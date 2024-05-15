@@ -1,0 +1,15 @@
+python run.py \
+    --output_dir=./saved_models/ \
+    --model_name_or_path=microsoft/unixcoder-base \
+    --do_eval \
+    --do_test \
+   --train_data_file=../dataset/tamal_train.jsonl \
+    --eval_data_file=../dataset/tamal_valid.jsonl \
+    --test_data_file=../dataset/tamal_test.jsonl \
+    --num_train_epochs 1 \
+    --block_size 256 \
+    --train_batch_size 64 \
+    --eval_batch_size 32 \
+    --learning_rate 2e-5 \
+    --max_grad_norm 1.0 \
+    --seed 123456  2>&1 | tee test.log
